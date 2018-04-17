@@ -29,6 +29,7 @@ Log=/var/lib/mavlink-router/
 Device = /dev/ttyS1
 Baud = 921600,460800
 
+# For both MAVROS, DroneCore apps.
 [UdpEndpoint wifi_offboard]
 Mode = Normal
 Address = 192.168.8.255
