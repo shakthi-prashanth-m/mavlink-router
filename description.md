@@ -6,9 +6,9 @@ It is intereseting for several reasons:
 - It solves the routing problem, which would otherwise need to be taken care by SDK or apps.
 - You don't need a cable to calibration your drone, because MAVLink messages can be sent to calibration PC over the network.
 - Accessing a network port easier than a serial port.
-- Several software stacks (For eg: MAVROS and Dronecode SDK) can share access to PX4.
+- Several software stacks (For eg: QGroundControl, Dronecode SDK or MAVROS) can share access to PX4.
 
-So, instead of sending MAVLink messages over a serial port, send it to the TCP port 5760 (configurable).
+So, instead of sending MAVLink messages over a serial port, send it to the **TCP port 5760** (configurable).
 
 ![mavlink_router_px4_devguide](https://user-images.githubusercontent.com/26615772/38861319-e8f33afe-424f-11e8-83bd-4fb209769bee.png)
 
@@ -19,7 +19,7 @@ MAVLink Router also listens TCP port 5760 (by default) for connections. Any appl
 To connect over UDP, you need to add an UDP endpoint in the MAVLink Router .conf file. By default, `mavlink-routerd` looks for a file `/etc/mavlink-router/main.conf`. File location can be overriden via `MAVLINK_ROUTER_CONF_FILE` environment variable, or via `-c`  switch when running `mavlink-routerd`. An example of conf file can be found on [examples/config.sample](https://github.com/intel/mavlink-router/blob/master/examples/config.sample).
 
 ```
-# Following, an example of configuration file:
+# Example configuration file:
 [General]
 TcpServerPort=5760
 ReportStats=false
@@ -35,4 +35,6 @@ Address = 192.168.8.255
 Port = 14540
 ```
 
-For more information about building, installing etc, refer to [MAVLink Router repository](https://github.com/intel/mavlink-router).
+For more information, please refer:
+- [MAVLink Router repository](https://github.com/intel/mavlink-router) for build, install and examples.
+- [Intel Aero Software architecture](https://github.com/intel-aero/Documents/blob/master/course/pdf/B4%20-%20Autonomous%20Drone%20Engineer%20-%20Architecture%20-%20Software%20Architecture.pdf) 
