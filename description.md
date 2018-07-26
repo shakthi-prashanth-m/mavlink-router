@@ -10,7 +10,7 @@ It is intereseting for several reasons:
 
 So, instead of sending MAVLink messages over a serial port, send it to the **TCP port 5760** (configurable).
 
-![mavlink_router_px4_devguide](https://user-images.githubusercontent.com/26615772/38861319-e8f33afe-424f-11e8-83bd-4fb209769bee.png)
+![image](https://user-images.githubusercontent.com/26615772/43253128-d528be0a-90e1-11e8-94cf-f5e9669cb4b7.png)
 
 There's one **master** endpoint that should be the flight stack (either on UART or UDP) and other components that can be on UDP or TCP endpoints. TCP endpoints are added automatically if the TCP server is enabled, allowing clients to simply connect to mavlink-router without changing its configuration.
 
